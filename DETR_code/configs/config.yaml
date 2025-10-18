@@ -1,0 +1,28 @@
+# Don't use chinese to write this file!!!
+# please use absolute path
+
+# for coco train, val
+paths:
+  train_imgdir: "train_img"
+  train_txtdir: "train_txt"
+  val_imgdir: "val_img"
+  val_txtdir: "val_txt"
+  model_best: "model_best_coco.pth"
+  model_last: "model_last_coco.pth"
+
+
+# lr0=0.0001, batch0=16;  lr/batch = lr0/batch0, lr = lr0 * batch/batch0
+# for example: if batch=4, then lr = 0.0001 * 4/16 = 0.000025
+training:
+  num_classes: 80
+  num_queries: 100
+  num_workers: 0
+  background_weight: 0.1
+  imgsz: [640, 640]
+  batch_size: 4
+  epochs: 500
+  learning_rate: 0.000025
+  weight_decay: 0.0001
+  scores_threshold: 0.001
+  device: "cuda"
+  pin_memory: True
